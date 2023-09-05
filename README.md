@@ -33,12 +33,7 @@
 
 <details>
   <summary>Client</summary>
-  <ul>
-    <li><a href="https://reactjs.org/">HTML</a></li>
-    <li><a href="https://reactjs.org/">CSS (including responsive design)</a></li>
-    <li><a href="https://reactjs.org/">JavaScript for menu functionality</a></li>
-    <li><a href="https://webpack.js.org">Webpack</a></li>
-  </ul>
+  
 </details>
 
 <details>
