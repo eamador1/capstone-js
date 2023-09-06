@@ -53,13 +53,13 @@ button {
   text-align: center;
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
   ul {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-@media (min-width: 1025px){
+@media (min-width: 1025px) {
   ul {
     grid-template-columns: repeat(6, 1fr);
   }
