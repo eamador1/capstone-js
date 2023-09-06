@@ -1,3 +1,27 @@
-body {
-  background-color: bisque;
+ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+li {
+  list-style: none;
+  display: flex;
+}
+
+img {
+  width: 200px;
+  border-radius: 8px 8px 0 0;
+}
+
+.meal {
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
 }
