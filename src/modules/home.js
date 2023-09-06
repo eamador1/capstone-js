@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     button.className = className;
     return button;
   };
-  
+
   fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken")
 //   fetch("www.themealdb.com/api/json/v1/1/random.php")
     .then((response) => response.json())
@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
           listItem.className = "meal-item";
 
           const { strMealThumb, strMeal, strInstructions } = meal;
-          console.log({ strMealThumb, strMeal, strInstructions })
 
           const mealDiv = createMealDiv(strMealThumb, strMeal, strInstructions);
 
@@ -54,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
     .catch((error) => {
-      mealList.textContent = "An error occurred while fetching data.";
+      mealList.textContent = error?.message || "An error occurred while fetching data.";
     });
 
 });
