@@ -109,6 +109,96 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/Modules/commentsCounter.js":
+/*!****************************************!*\
+  !*** ./src/Modules/commentsCounter.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+  eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst countComments = () => {\n  const comments = document.querySelectorAll('.comment-text');\n  return comments.length;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (countComments);\n\n\n//# sourceURL=webpack://javascriptcapstone/./src/Modules/commentsCounter.js?");
+
+  /***/ }),
+  
+  /***/ "./src/Modules/commentsPopup.js":
+  /*!**************************************!*\
+    !*** ./src/Modules/commentsPopup.js ***!
+    \**************************************/
+  /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+  
+  eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _getItemsDetails_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getItemsDetails.js */ \"./src/Modules/getItemsDetails.js\");\n/* harmony import */ var _getComments_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getComments.js */ \"./src/Modules/getComments.js\");\n/* harmony import */ var _sendComment_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sendComment.js */ \"./src/Modules/sendComment.js\");\n/* harmony import */ var _commentsCounter_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./commentsCounter.js */ \"./src/Modules/commentsCounter.js\");\n\n\n\n\n\nconst showCommentsPopup = async (id) => {\n  const details = await (0,_getItemsDetails_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(id);\n  const appId = 'k513WvYOj4wUaRdaeuNF';\n\n  const popup = document.createElement('div');\n  popup.id = 'commentsPopup';\n  popup.innerHTML = `\n  <h2>${details.strMeal}</h2>\n  <img src=\"${details.strMealThumb}\" alt=\"${details.strMeal}\">\n  <p id=\"details-instructions\">${details.strInstructions}</p>\n  <div id=\"commentsContainer\"></div>\n  <h3>Add a comment</h3>\n  <form id=\"commentForm\">\n    <div>\n      <input type=\"text\" id=\"nameInput\" placeholder=\"Your name\">\n    </div>\n    <div>\n      <textarea id=\"commentInput\" placeholder=\"Your comment\"></textarea>\n    </div>\n    <button id=\"submitCommentButton\">Comment</button>\n  </form>\n  <button class=\"closeButton\">&times;</button>\n`;\n\n  document.body.appendChild(popup);\n\n  const commentsContainer = popup.querySelector('#commentsContainer');\n\n  // Create a new element to display the comment count\n  const commentsCountElement = document.createElement('p');\n  commentsCountElement.id = 'commentsCount';\n  commentsCountElement.classList.add('comments-count');\n\n  popup.insertBefore(commentsCountElement, commentsContainer);\n\n  const updateComments = async () => {\n    const comments = await (0,_getComments_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(appId, id);\n    if (!Array.isArray(comments)) {\n      // This block it's designed to handle the empty data in comments\n    } else {\n      commentsContainer.innerHTML = '';\n      comments.forEach((comment) => {\n        const commentElement = document.createElement('p');\n        commentElement.textContent = `${comment.creation_date} - ${comment.username}: ${comment.comment}`;\n        commentElement.classList.add('comment-text');\n        commentsContainer.appendChild(commentElement);\n      });\n      // Update the comments count after updating the comments\n      commentsCountElement.textContent = `Comments: ${(0,_commentsCounter_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])()}`;\n    }\n  };\n\n  await updateComments();\n\n  const form = popup.querySelector('#commentForm');\n  form.addEventListener('submit', async (event) => {\n    const usernameInput = popup.querySelector('#nameInput');\n    const commentInput = popup.querySelector('#commentInput');\n\n    event.preventDefault();\n\n    const username = usernameInput.value;\n    const comment = commentInput.value;\n\n    await (0,_sendComment_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(appId, id, username, comment);\n    await updateComments(); // Update the comments (and the count) after submitting a comment\n\n    // Clear the input fields after the comment has been sent and comments have been updated\n    usernameInput.value = '';\n    commentInput.value = '';\n  });\n\n  popup.querySelector('.closeButton').addEventListener('click', () => {\n    document.body.removeChild(popup);\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (showCommentsPopup);\n\n\n//# sourceURL=webpack://javascriptcapstone/./src/Modules/commentsPopup.js?");
+  
+  /***/ }),
+  
+  /***/ "./src/Modules/errorHandler.js":
+  /*!*************************************!*\
+    !*** ./src/Modules/errorHandler.js ***!
+    \*************************************/
+  /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+  
+  eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst handleFetchError = (error) => {\n  const errorMessage = document.getElementById('error-message');\n  if (errorMessage) {\n    errorMessage.innerHTML = `<span>${error.message}</span>`;\n  }\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (handleFetchError);\n\n//# sourceURL=webpack://javascriptcapstone/./src/Modules/errorHandler.js?");
+  
+  /***/ }),
+  
+  /***/ "./src/Modules/getComments.js":
+  /*!************************************!*\
+    !*** ./src/Modules/getComments.js ***!
+    \************************************/
+  /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+  
+  eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst getComments = async (appId, id) => {\n  try {\n    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=${id}`);\n    const data = await response.json();\n    return data;\n  } catch (error) {\n    return error;\n  }\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getComments);\n\n//# sourceURL=webpack://javascriptcapstone/./src/Modules/getComments.js?");
+  
+  /***/ }),
+  
+  /***/ "./src/Modules/getItems.js":
+  /*!*********************************!*\
+    !*** ./src/Modules/getItems.js ***!
+    \*********************************/
+  /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+  
+  eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _commentsPopup_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./commentsPopup.js */ \"./src/Modules/commentsPopup.js\");\n/* harmony import */ var _errorHandler_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./errorHandler.js */ \"./src/Modules/errorHandler.js\");\n/* harmony import */ var _likes_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./likes.js */ \"./src/Modules/likes.js\");\n/* harmony import */ var _itemCounter_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./itemCounter.js */ \"./src/Modules/itemCounter.js\");\n\n\n\n\n\nconst container = document.querySelector('#itemsContainer');\n\nconst displayItems = (dataMeals) => {\n  dataMeals.forEach(async (meals) => {\n    const numberOfLikes = await (0,_likes_js__WEBPACK_IMPORTED_MODULE_2__.getLikes)();\n    let likes = 0;\n    numberOfLikes.forEach((elem) => {\n      if (elem.item_id === meals.idMeal) {\n        likes = elem.likes;\n      }\n    });\n    const mainDiv = document.createElement('div');\n    mainDiv.className = 'dflex container';\n    mainDiv.innerHTML = `\n    <div class=\"item dflex\">\n      <img class=\"mealimg\" id=\"${meals.idMeal}\" src=\"${meals.strMealThumb}\" alt=\"${meals.strMealThumb}\">\n      <div class=\"dflex mealtitle\">\n        <h2>${meals.strMeal}</h2>\n        <div>\n          <span class=\"${meals.idMeal}\" id=\"likesNumber\">${likes} likes</span>\n          <button class=\"${meals.idMeal}\" id=\"likes\">&#9825;</button>\n        </div>\n      </div>\n        <button class=\"testing\" id=\"comments\">Comments</button>\n      </div>\n    `;\n\n    mainDiv.querySelectorAll('#comments').forEach((commentsButton) => {\n      commentsButton.addEventListener('click', async () => {\n        await (0,_commentsPopup_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(meals.idMeal).catch(_errorHandler_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n      });\n    });\n\n    mainDiv.querySelector('#likes').addEventListener('click', async (event) => {\n      const id = event.target.className;\n      await (0,_likes_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(id);\n      const updateLikes = mainDiv.querySelector('#likesNumber');\n      await (0,_likes_js__WEBPACK_IMPORTED_MODULE_2__.updateText)(meals.idMeal, updateLikes);\n    });\n\n    container.appendChild(mainDiv);\n  });\n};\n\nconst getItems = async () => {\n  const request = await fetch('https://themealdb.com/api/json/v1/1/filter.php?c=Chicken');\n  const data = await request.json();\n  displayItems(data.meals);\n  (0,_itemCounter_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(data.meals.length);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getItems);\n\n//# sourceURL=webpack://javascriptcapstone/./src/Modules/getItems.js?");
+  
+  /***/ }),
+  
+  /***/ "./src/Modules/getItemsDetails.js":
+  /*!****************************************!*\
+    !*** ./src/Modules/getItemsDetails.js ***!
+    \****************************************/
+  /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+  
+  eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst getItemDetails = async (id) => {\n  const request = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);\n  const data = await request.json();\n  return data.meals[0];\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getItemDetails);\n\n//# sourceURL=webpack://javascriptcapstone/./src/Modules/getItemsDetails.js?");
+  
+  /***/ }),
+  
+  /***/ "./src/Modules/itemCounter.js":
+  /*!************************************!*\
+    !*** ./src/Modules/itemCounter.js ***!
+    \************************************/
+  /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+  
+  eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst homeItemCounter = (containerItems) => {\n  const hometitle = document.querySelector('#mainTitle');\n  hometitle.textContent = `${containerItems} Vegetarian Recipes`;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (homeItemCounter);\n\n//# sourceURL=webpack://javascriptcapstone/./src/Modules/itemCounter.js?");
+  
+  /***/ }),
+  
+  /***/ "./src/Modules/likes.js":
+  /*!******************************!*\
+    !*** ./src/Modules/likes.js ***!
+    \******************************/
+  /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+  
+  eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__),\n/* harmony export */   getLikes: () => (/* binding */ getLikes),\n/* harmony export */   updateText: () => (/* binding */ updateText)\n/* harmony export */ });\nconst postLikes = async (id) => {\n  const sendData = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/k513WvYOj4wUaRdaeuNF/likes/', {\n    method: 'POST',\n    headers: {\n      'Content-type': 'application/json; charset=UTF-8',\n    },\n    body: JSON.stringify({\n      item_id: id,\n    }),\n  });\n  const result = await sendData.text();\n  return result;\n};\n\nconst getLikes = async () => {\n  const requestLikes = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/k513WvYOj4wUaRdaeuNF/likes/');\n  const dataLikes = await requestLikes.json();\n  return dataLikes;\n};\n\nconst updateText = async (idmeal, span) => {\n  const numberOfLikes = await getLikes();\n  let likes = 0;\n  numberOfLikes.forEach((elem) => {\n    if (elem.item_id === idmeal) {\n      likes = elem.likes;\n    }\n  });\n  span.textContent = `${likes} likes`;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (postLikes);\n\n//# sourceURL=webpack://javascriptcapstone/./src/Modules/likes.js?");
+  
+  /***/ }),
+  
+  /***/ "./src/Modules/sendComment.js":
+  /*!************************************!*\
+    !*** ./src/Modules/sendComment.js ***!
+    \************************************/
+  /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+  
+  eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst sendComment = async (appId, id, username1, comment1) => {\n  const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments`, {\n    method: 'POST',\n    headers: {\n      'Content-Type': 'application/json',\n    },\n    body: JSON.stringify({\n      item_id: id,\n      username: username1,\n      comment: comment1,\n    }),\n  });\n\n  if (!response.ok) {\n    throw new Error('Error sending the comment');\n  }\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sendComment);\n\n//# sourceURL=webpack://javascriptcapstone/./src/Modules/sendComment.js?");
+  
+  /***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
