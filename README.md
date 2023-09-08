@@ -33,10 +33,12 @@
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
+
   <summary>HTML</summary>
   <ul>
     <li>This project use <a href="https://github.com/microverseinc/curriculum-html-css/blob/main/html5.md">HTML.</a></li>
   </ul>
+
 </details>
 
 <details>
