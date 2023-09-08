@@ -1,6 +1,6 @@
 import './styles.css';
 import mylogo from './images/VegetarianRestauratLogo.png';
-import getItems from './Modules/getItems.js';
+import getItems from './modules/getItems.js';
 
 document.querySelector('#logo').src = mylogo;
 
