@@ -1,3 +1,4 @@
+
 const showReservation = async (meal) => {
     const modal = document.createElement('div');
     modal.classList.add('modal');
@@ -29,7 +30,7 @@ const showReservation = async (meal) => {
     document.body.appendChild(modal);
 
     modal.querySelector('.closeButton').addEventListener('click', () => {
-        document.body.removeChild(popup);
+        document.body.removeChild(modal);
       });
       
   };
