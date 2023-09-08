@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import countComments from '../src/Modules/commentsCounter.js';
+import countComments from '../src/modules/commentsCounter.js';
 
 describe('Comments Counter', () => {
   document.body.innerHTML = `

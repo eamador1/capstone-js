@@ -181,3 +181,28 @@ h2 {
   font-size: 30px;
   font-weight: 900;
 }
+
+.meal {
+  border: 4px solid #eceaea;
+  background-color: #f6f6f6;
+  border-radius: 10px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  ul {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

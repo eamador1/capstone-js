@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import homeItemCounter from '../src/Modules/itemCounter.js';
+import homeItemCounter from '../src/modules/itemCounter.js';
 
 describe('Return the number of items displayed in the screen', () => {
   it('Case 1', () => {
