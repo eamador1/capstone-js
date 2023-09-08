@@ -5,7 +5,7 @@ import countComments from './commentsCounter.js';
 
 const showCommentsPopup = async (id) => {
   const details = await getItemDetails(id);
-  const appId = 'T5GjCN7uIoY3OjdWhSzm';
+  const appId = 'k513WvYOj4wUaRdaeuNF';
 
   const popup = document.createElement('div');
   popup.id = 'commentsPopup';
