@@ -1,59 +1,69 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const mealList = document.querySelector(".meal-list");
 
-  const createMealDiv = (thumbnail, name, recipe) => {
-    const mealDiv = document.createElement("div");
-    mealDiv.className = "meal";
+const displaymeals = () => {
+  document.addEventListener("DOMContentLoaded", () => {
+    const mealList = document.querySelector(".meal-list");
 
-    const thumbnailElement = document.createElement("img");
-    thumbnailElement.src = thumbnail;
-    thumbnailElement.alt = name;
+    const createMealDiv = (thumbnail, name, recipe) => {
+      const mealDiv = document.createElement("div");
+      mealDiv.className = "meal";
 
-    const nameElement = document.createElement("h2");
-    nameElement.textContent = name;
+      const thumbnailElement = document.createElement("img");
+      thumbnailElement.src = thumbnail;
+      thumbnailElement.alt = name;
 
-    const recipeElement = document.createElement("p");
-    recipeElement.textContent = recipe;
+      const nameElement = document.createElement("h2");
+      nameElement.textContent = name;
 
-    mealDiv.append(thumbnailElement, nameElement, recipeElement);
-    return mealDiv;
-  };
+      const recipeElement = document.createElement("p");
+      recipeElement.textContent = recipe;
 
-  const createButton = (text, className) => {
-    const button = document.createElement("button");
-    button.textContent = text;
-    button.className = className;
-    return button;
-  };
+      mealDiv.append(thumbnailElement, nameElement, recipeElement);
+      return mealDiv;
+    };
 
-  fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken")
-//   fetch("www.themealdb.com/api/json/v1/1/random.php")
-    .then((response) => response.json())
-    .then(({ meals }) => {
-      if (meals) {
-        meals.forEach((meal) => {
-          const listItem = document.createElement("li");
-          listItem.className = "meal-item";
+    const createButton = (text, className) => {
+      const button = document.createElement("button");
+      button.textContent = text;
+      button.className = className;
+      return button;
+    };
 
-          const { strMealThumb, strMeal, strInstructions } = meal;
+    fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken")
+      //   fetch("www.themealdb.com/api/json/v1/1/random.php")
+      .then((response) => response.json())
+      .then(({ meals }) => {
+        if (meals) {
+          meals.forEach((meal) => {
+            const listItem = document.createElement("li");
+            listItem.className = "meal-item";
 
-          const mealDiv = createMealDiv(strMealThumb, strMeal, strInstructions);
+            const { strMealThumb, strMeal, strInstructions } = meal;
 
-          const commentButton = createButton("Comment", "comment-button");
-          const reserveButton = createButton("Reserve", "reserve-button");
+            const mealDiv = createMealDiv(
+              strMealThumb,
+              strMeal,
+              strInstructions
+            );
 
-          mealDiv.append(commentButton, reserveButton);
+            const commentButton = createButton("Comment", "comment-button");
+            const reserveButton = createButton("Reserve", "reserve-button");
 
-          listItem.appendChild(mealDiv);
+            mealDiv.append(commentButton, reserveButton);
 
-          mealList.appendChild(listItem);
-        });
-      } else {
-        mealList.textContent = "No vegetarian meals found.";
-      }
-    })
-    .catch((error) => {
-      mealList.textContent = error?.message || "An error occurred while fetching data.";
-    });
+            listItem.appendChild(mealDiv);
 
-});
+            mealList.appendChild(listItem);
+          });
+        } else {
+          mealList.textContent = "No vegetarian meals found.";
+        }
+      })
+      .catch((error) => {
+        mealList.textContent =
+          error?.message || "An error occurred while fetching data.";
+      });
+  });
+  return;
+};
+
+export default displaymeals;
