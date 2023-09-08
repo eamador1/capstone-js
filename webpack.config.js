@@ -7,7 +7,6 @@ module.exports = {
   },
   devServer: {
     static: './dist',
-    port: '9000',
     hot: true,
     watchFiles: ['src/*.html'],
     liveReload: true,
@@ -25,7 +24,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
