@@ -1,4 +1,3 @@
-
 export const displaymeals = () => {
   document.addEventListener('DOMContentLoaded', () => {
     const mealList = document.querySelector('.meal-list');
