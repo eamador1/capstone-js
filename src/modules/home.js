@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken')
-//   fetch('www.themealdb.com/api/json/v1/1/random.php')
+  //   fetch('www.themealdb.com/api/json/v1/1/random.php')
     .then((response) => response.json())
     .then(({ meals }) => {
       if (meals) {
@@ -55,5 +55,4 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch((error) => {
       mealList.textContent = error?.message || 'An error occurred while fetching data.';
     });
-
 });
