@@ -1,4 +1,3 @@
 import './style.css';
-import { displaymeals } from './modules/home.js';
+import getItems from './modules/getMeals.js';
 
-displaymeals();
