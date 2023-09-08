@@ -1,20 +1,20 @@
 
 export const displaymeals = () => {
-  document.addEventListener("DOMContentLoaded", () => {
-    const mealList = document.querySelector(".meal-list");
+  document.addEventListener('DOMContentLoaded', () => {
+    const mealList = document.querySelector('.meal-list');
 
     const createMealDiv = (thumbnail, name, recipe) => {
-      const mealDiv = document.createElement("div");
-      mealDiv.className = "meal";
+      const mealDiv = document.createElement('div');
+      mealDiv.className = 'meal';
 
-      const thumbnailElement = document.createElement("img");
+      const thumbnailElement = document.createElement('img');
       thumbnailElement.src = thumbnail;
       thumbnailElement.alt = name;
 
-      const nameElement = document.createElement("h2");
+      const nameElement = document.createElement('h2');
       nameElement.textContent = name;
 
-      const recipeElement = document.createElement("p");
+      const recipeElement = document.createElement('p');
       recipeElement.textContent = recipe;
 
       mealDiv.append(thumbnailElement, nameElement, recipeElement);
@@ -22,31 +22,31 @@ export const displaymeals = () => {
     };
 
     const createButton = (text, className) => {
-      const button = document.createElement("button");
+      const button = document.createElement('button');
       button.textContent = text;
       button.className = className;
       return button;
     };
 
-    fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken")
-      //   fetch("www.themealdb.com/api/json/v1/1/random.php")
+    fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken')
+      //   fetch('www.themealdb.com/api/json/v1/1/random.php')
       .then((response) => response.json())
       .then(({ meals }) => {
         if (meals) {
           meals.forEach((meal) => {
-            const listItem = document.createElement("li");
-            listItem.className = "meal-item";
+            const listItem = document.createElement('li');
+            listItem.className = 'meal-item';
 
             const { strMealThumb, strMeal, strInstructions } = meal;
 
             const mealDiv = createMealDiv(
               strMealThumb,
               strMeal,
-              strInstructions
+              strInstructions,
             );
 
-            const commentButton = createButton("Comment", "comment-button");
-            const reserveButton = createButton("Reserve", "reserve-button");
+            const commentButton = createButton('Comment', 'comment-button');
+            const reserveButton = createButton('Reserve', 'reserve-button');
 
             mealDiv.append(commentButton, reserveButton);
 
@@ -55,15 +55,13 @@ export const displaymeals = () => {
             mealList.appendChild(listItem);
           });
         } else {
-          mealList.textContent = "No vegetarian meals found.";
+          mealList.textContent = 'No vegetarian meals found.';
         }
       })
       .catch((error) => {
-        mealList.textContent =
-          error?.message || "An error occurred while fetching data.";
+        mealList.textContent = error?.message || 'An error occurred while fetching data.';
       });
   });
-  return;
 };
 
 export default displaymeals;
