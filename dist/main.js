@@ -115,7 +115,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n/* harmony import */ var _images_chickenFoodLogo_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./images/chickenFoodLogo.png */ \"./src/images/chickenfoodlogo.png\");\n/* harmony import */ var _modules_getItems_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/getItems.js */ \"./src/modules/getItems.js\");\n\r\n\r\n\r\n\r\ndocument.querySelector('#logo').src = _images_chickenfoodlogo_png__WEBPACK_IMPORTED_MODULE_1__;\r\n\r\nwindow.addEventListener('load', () => {\r\n  (0,_modules_getItems_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n});\r\n\n\n//# sourceURL=webpack://javascriptcapstone/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\nObject(function webpackMissingModule() { var e = new Error(\"Cannot find module './images/chickenFoodLogo'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n/* harmony import */ var _modules_getItems_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/getItems.js */ \"./src/modules/getItems.js\");\n\r\n\r\n\r\n\r\ndocument.querySelector('#logo').src = Object(function webpackMissingModule() { var e = new Error(\"Cannot find module './images/chickenFoodLogo'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\r\n\r\nwindow.addEventListener('load', () => {\r\n  (0,_modules_getItems_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n});\r\n\n\n//# sourceURL=webpack://javascriptcapstone/./src/index.js?");
 
 /***/ }),
 
@@ -206,16 +206,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst sendComment = async (appId, id, username1, comment1) => {\r\n  const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments`, {\r\n    method: 'POST',\r\n    headers: {\r\n      'Content-Type': 'application/json',\r\n    },\r\n    body: JSON.stringify({\r\n      item_id: id,\r\n      username: username1,\r\n      comment: comment1,\r\n    }),\r\n  });\r\n\r\n  if (!response.ok) {\r\n    throw new Error('Error sending the comment');\r\n  }\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sendComment);\n\n//# sourceURL=webpack://javascriptcapstone/./src/modules/sendComment.js?");
-
-/***/ }),
-
-/***/ "./src/images/chickenfoodlogo.png":
-/*!******************************************!*\
-  !*** ./src/images/chickenfoodlogo.png ***!
-  \******************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("module.exports = __webpack_require__.p + \"68b95b20cf918bf07e37.png\";\n\n//# sourceURL=webpack://javascriptcapstone/./src/images/chickenfoodlogo.png?");
 
 /***/ })
 
