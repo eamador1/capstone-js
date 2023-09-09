@@ -1,7 +1,7 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: rgb(161, 230, 230);
+  background-color: #FFFBFE;
 }
 
 .dflex {
@@ -12,9 +12,10 @@ body {
   flex-wrap: wrap;
 }
 
-header,
-footer {
-  background-color: rgb(245, 209, 109);
+header{
+  width:100%;
+  background-color: #1C1B1F; 
+  position: fixed;
 }
 
 main {
@@ -29,11 +30,13 @@ ul,
 li a {
   text-decoration: none;
   list-style: none;
-  color: black;
+  color: #FFFBFE;
   font-size: 15px;
 }
 
 footer {
+  background-color: #1C1B1F;
+  color: #FFFBFE;
   font-size: 15px;
   text-align: center;
   justify-content: center;
@@ -116,7 +119,7 @@ h2 {
 }
 
 #details-instructions {
-  color: rgb(115, 164, 236);
+  color: #381E72;
   padding: 30px;
   margin-left: 90px;
   margin-right: 90px;
@@ -180,6 +183,7 @@ h2 {
   color: rgb(115, 164, 236);
   font-size: 30px;
   font-weight: 900;
+  margin-top: 25%;
 }
 
 .meal {
