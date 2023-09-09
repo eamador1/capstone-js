@@ -11,7 +11,7 @@ describe('Return the number of items displayed in the screen', () => {
     `;
     const items = [1, 2, 3, 4];
     const result = homeItemCounter(items.length);
-    expect(result).toMatch(/4 Vegetarian Recipes/);
+    expect(result).toMatch(/4 Chicken Food Recipes/);
   });
 
   it('Case 2', () => {
@@ -20,6 +20,6 @@ describe('Return the number of items displayed in the screen', () => {
     `;
     const items = [1, 2, 3, 4, 5, 6, 7];
     const result = homeItemCounter(items.length);
-    expect(result).toMatch(/7 Vegetarian Recipes/);
+    expect(result).toMatch(/7 Chicken Food Recipes/);
   });
 });

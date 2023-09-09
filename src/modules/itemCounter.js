@@ -1,6 +1,6 @@
 const homeItemCounter = (containerItems) => {
   const hometitle = document.querySelector('#mainTitle');
-  hometitle.textContent = `${containerItems} Vegetarian Recipes`;
+  hometitle.textContent = `${containerItems} Chicken Food Recipes`;
   return hometitle.textContent;
 };
 

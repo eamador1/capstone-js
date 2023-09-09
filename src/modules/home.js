@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
           mealList.appendChild(listItem);
         });
       } else {
-        mealList.textContent = 'No vegetarian meals found.';
+        mealList.textContent = 'No Chicken meals found.';
       }
     })
     .catch((error) => {
