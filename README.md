@@ -1,131 +1,181 @@
-<a name="readme-top"></a>
+# JavaScriptCapstone
 
-<!-- TABLE OF CONTENTS -->
+<a name="readme-top"></a>
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-- [💻 Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Setup](#setup)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](#license)
+- [JavaScriptCapstone](#javascriptcapstone)
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 JavaScriptCapstone ](#-javascriptcapstone-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Project Structure](#project-structure)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
-<!-- PROJECT DESCRIPTION -->
+# 📖 JavaScriptCapstone <a name="about-project"></a>
 
-# 📖 WEBPACK TEMPLATE <a name="about-project"></a>
-
-**WEBPACK TEMPLATE** This template is focused on being a base project using Webpack and all the core libraries needed.
+> This is the JavaScript Capstone project, where we built a web application based on an external API. The project is a webapp that revolves around a selected API, providing data about a topic of our choice.
+> [Here](https://youtu.be/xxxxxxxxx) is the link to the video presentation 
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
-  <summary>Client</summary>
-  
+
+  <summary>HTML</summary>
+  <ul>
+    <li>This project use <a href="https://github.com/microverseinc/curriculum-html-css/blob/main/html5.md">HTML.</a></li>
+  </ul>
+
 </details>
 
 <details>
-<summary>Database</summary>
+  <summary>CSS</summary>
   <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+    <li>The <a href="https://github.com/microverseinc/curriculum-html-css/blob/main/html5.md">CSS</a> is used to provide the design in the whole page.</li>
   </ul>
 </details>
 
-<!-- Features -->
+<details>
+  <summary>Linters</summary>
+  <ul>
+    <li>The <a href="https://github.com/microverseinc/linters-config">Linters</a> are tools that help us to check and solve the errors in the code</li>
+    This project count with three linters: 
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+  </ul>
+</details>
+
+<details>
+  <summary>Webpack</summary>
+  <ul>
+      <li>HTML Webpack Plugin</li>
+      <li>Webpack Style/CSS Loader</li>
+      <li>Local dev Server</li>
+    </ul>
+</details>
+
+<details>
+  <summary>API's</summary>
+  <ul>
+    <li>The <a href="https://www.themealdb.com/api.php">Themealdb API</a> is for obtain the food items.</li>
+    <li>The <a href="https://microverse.notion.site/Involvement-API-869e60b5ad104603aa6db59e08150270">Innvolvement API</a> is a Microverse API that allows the control of likes and comments.</li>
+  </ul>
+</details>
+<br>
 
 ### Key Features <a name="key-features"></a>
 
-- **[Responsive design for mobile and desktop]**
-- **[Menu functionality using JavaScript]**
-- **[Use of modules and libraries]**
+-   **Webpack Configuration**
+-   **HTML Generation**
+-   **CSS Styling**
+-   **Development Server**
+-   **Code Quality**
+-   **Modular Structure**
+-   **ES6 Syntax**
+-   **JavaScript Functionality**
+-   **Gitflow**
+-   **Send and receive data from API**
+-   **Jest testing**
+-   **API's**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-To get a local copy up and running, follow these steps.
+> To get a local copy up and running, follow these steps.
+> This project requires Node.js and npm installed on your machine.
 
-### Prerequisites
+-Node.js
+-npm
 
-To run this project you need:
+> -Clone this repository to your local machine using:
 
-- VSCode
-- npm
-- Node
+>  git clone https://github.com/eamador1/capstone-js.git
+
+> -Navigate to the project folder:
+
+> cd Leaderboard
+
+> -Install the project dependencies:
+
+> npm install
+
+> o start the development server, run the following command:
+
+> npm start
+
+### Project Structure
+
+> The project follows the following folder and file structure:
+
+> /src: Contains the source files of the application.
+> /src/index.js: Main entry point of the JavaScript application.
+> /src/style.css: CSS file for the application styles.
+> /src/index.html: Base HTML file of the application.
+> /dist: Contains the generated production files.
+> webpack.config.js: Webpack configuration file.
 
 ### Setup
 
-Make sure you have VSCode, npm, and Node installed
+> Clone this repository to your desired folder: https://github.com/eamador1/capstone-js.git
 
 ### Install
-In the root folder, run the script `npm install` to install all the libraries necessary.
+
+> Install this project with: install WebLint and ESLint
 
 ### Usage
-#### Webpack
-- Run the scripts: `npm run watch-webpack` to only have Webpack watch your files or
-- `npm run watch` to watch the tests and Webpack changes
-#### Live Demo
-- Run the script `npm run start` to see a live version of the project
 
+> To run the project, execute the following command: just need a web Browser
 
 ### Run tests
 
-Use the scripts: 
-- `npm run watch-jest` to only watch your tests with Jest or 
-- `npm run watch` to watch the tests and Webpack changes
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- AUTHORS -->
+> To run tests, run the following command: you just need a simple web browser to run this project for a test
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Esteban Palacios**
+👤 **Daniel Villalba Lynch**
 
-- GitHub: [@Estete9](https://github.com/Estete9)
-- Twitter: [@NaughTban](https://twitter.com/NaughTban)
-- LinkedIn: [Esteban Palacios](https://www.linkedin.com/in/esteban-palacios-5030a772/)
+- GitHub: [@gdvl777](https://github.com/gdvl777)
+- X: [Daniel Villalba Lynch](https://www.x.com/gdvl777_)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **Gallery popup**
+
+-   **[User Authentication]** 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
-Contributions, issues, and feature requests are welcome!
+> Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page UPDATE URL HERE](https://github.com/Estete9/webpack-template/issues).
+> Feel free to check the [issues page](https://github.com/eamador1/capstone-js/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- SUPPORT -->
-
 ## ⭐️ Show your support <a name="support"></a>
 
-
-If you like this project remember to star and share it 🥳️
+> If you like this project show support by following this account
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -133,13 +183,16 @@ If you like this project remember to star and share it 🥳️
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
+> -   Microverse for providing the opportunity to learn Git and GitHub in a collaborative environment.
 
-- ACKNOWLEDGMENTS TO CREATIVE LICENSE AND OTHERS
+> -   GitHub Docs for providing a wealth of information on Git and GitHub.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./MIT.md)-licensed.
+> This project is [MIT](./LICENSE).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
