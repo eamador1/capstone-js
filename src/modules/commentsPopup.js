@@ -17,10 +17,10 @@ const showCommentsPopup = async (id) => {
   <h3>Add a comment</h3>
   <form id="commentForm">
     <div>
-      <input type="text" id="nameInput" placeholder="Your name">
+      <input type="text" id="nameInput" placeholder="Your name" required>
     </div>
     <div>
-      <textarea id="commentInput" placeholder="Your comment"></textarea>
+      <textarea id="commentInput" placeholder="Your comment" required></textarea>
     </div>
     <button id="submitCommentButton">Comment</button>
   </form>
