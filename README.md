@@ -26,7 +26,7 @@
 # 📖 JavaScriptCapstone <a name="about-project"></a>
 
 > This is the JavaScript Capstone project, where we built a web application based on an external API. The project is a webapp that revolves around a selected API, providing data about a topic of our choice.
-> [Here](https://youtu.be/Hi2MclqUOjU) is the link to the video presentation 
+> [Here](https://youtu.be/xxxxxxxxx) is the link to the video presentation 
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -107,7 +107,7 @@
 
 > -Clone this repository to your local machine using:
 
->  git clone https://github.com/andream2429/JavaScriptCapstone.git
+>  git clone https://github.com/eamador1/capstone-js.git
 
 > -Navigate to the project folder:
 
@@ -134,7 +134,7 @@
 
 ### Setup
 
-> Clone this repository to your desired folder: https://github.com/andream2429/JavaScriptCapstone.git
+> Clone this repository to your desired folder: https://github.com/eamador1/capstone-js.git
 
 ### Install
 
@@ -150,15 +150,10 @@
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Andrea Manuel**
+👤 **Daniel Villalba Lynch**
 
-- GitHub: [@AndreaM2429](https://github.com/AndreaM2429)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/andrea-manuel-2b075026a/)
-
-👤 **Claudia Rojas**
-
--   GitHub: [@githubhandle](https://github.com/ClaudiaRojasSoto)
--   LinkedIn: [LinkedIn](https://www.linkedin.com/in/claudia-soto-260504208/)
+- GitHub: [@gdvl777](https://github.com/gdvl777)
+- X: [Daniel Villalba Lynch](https://www.x.com/gdvl777_)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -174,7 +169,7 @@
 
 > Contributions, issues, and feature requests are welcome!
 
-> Feel free to check the [issues page](https://github.com/AndreaM2429/JavaScriptCapstone/issues).
+> Feel free to check the [issues page](https://github.com/eamador1/capstone-js/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
