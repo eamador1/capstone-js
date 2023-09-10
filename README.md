@@ -26,7 +26,7 @@
 # 📖 JavaScriptCapstone <a name="about-project"></a>
 
 > This is the JavaScript Capstone project, where we built a web application based on an external API. The project is a webapp that revolves around a selected API, providing data about a topic of our choice.
-> [Here](https://youtu.be/xxxxxxxxx) is the link to the video presentation 
+> [Here](https://drive.google.com/file/d/16QFpUkJEgDbyZVJszBJZ0uK9IlmAT4wv/view?usp=sharing) is the link to the video presentation 
 
 ## 🛠 Built With <a name="built-with"></a>
 
